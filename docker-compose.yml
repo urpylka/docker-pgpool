@@ -1,10 +1,12 @@
 version: '3.7'
 services:
   pgpool:
-    image: rueian/pgpool:3.7.5-debian9
+    image: smirart/pgpool:latest
     ports:
       - "5432:5432"
     volumes:
       - ./pgpool.conf:/etc/pgpool/pgpool.conf
   pg0:
     image: postgres:10-alpine
+    environment:
+      - POSTGRES_PASSWORD=password
