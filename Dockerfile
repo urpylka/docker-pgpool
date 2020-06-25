@@ -11,7 +11,7 @@ RUN apt-get update && \
 
 RUN mkdir -p /var/run/pgpool/
 
-COPY ./docker-entrypoint.sh /
-ENTRYPOINT ["/docker-entrypoint.sh"]
+COPY ./docker-entrypoint /
+ENTRYPOINT ["/docker-entrypoint"]
 
 CMD ["/usr/sbin/pgpool", "-n"]
